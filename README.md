@@ -20,7 +20,7 @@ Problems:
 - State file decentralised
 if you centralize it, it’s not easy to collaborate, who’s doing what ? 
 ```
-    cat terraform.tfstate
+cat terraform.tfstate
 ```    
 - Out of band changes
 
