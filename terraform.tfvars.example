@@ -3,6 +3,7 @@
 # Make sure it is at least 5 characters long.
 
 prefix = "jerome"
-height = "500"
-width = "500"
-placeholder = "placebeard.it"
+
+#height = "500"
+#width = "500"
+#placeholder = "placebeard.it"
