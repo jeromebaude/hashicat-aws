@@ -85,15 +85,16 @@ All sensitive variables are now secured !! Environment is protected by TFE: cann
 
     terraform destroy
 
-### 2.3 Sentinel
-
-Add environment variable
+Add environment variable to be able to destroy
         
     CONFIRM_DESTROY: 1 
 
 Destroy current deployment from TFE Web UI. 
 
-Sentinel will intercept bad configurations before they go to production, not after.
+### 2.3 Sentinel
+
+Sentinel intercepts bad configurations before they go to production, not after.
+
 Create a policy saying vpcs must have tags and enable dns hostnames
 
     Settings > Policies > aws-vpcs-must-have-tags-and-enable-dns-hostnames
