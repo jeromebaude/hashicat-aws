@@ -23,10 +23,10 @@ if you centralize it, it’s not easy to collaborate, who’s doing what ?
 cat terraform.tfstate
 ```    
 - Out of band changes
-
-    terraform apply -var placeholder=placebear.com -var height=500 -var width=500 -auto-approve
-    terraform apply -var placeholder=placebeard.it -var height=500 -var width=500 -auto-approve
-
+```
+terraform apply -var placeholder=placebear.com -var height=500 -var width=500 -auto-approve
+terraform apply -var placeholder=placebeard.it -var height=500 -var width=500 -auto-approve
+```
 Note: check existing EIP consumption [5 max]
 
     aws ec2 describe-addresses --region us-east-1 --query ‘Addresses[*].PublicIp’
