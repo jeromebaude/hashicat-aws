@@ -3,14 +3,15 @@ Terraform Apps for TFE workshops
 
 Includes "Meow World" website and Dockerfiles for building containerized apps.
 
-## clone / initialise / provisiom
+## 1. Using Terraform OSS
+### clone / initialise / provisiom
 
     git clone https://github.com/jeromebaude/hashicat-aws.git terraform-aws-hashicat
     mv terraform.tfvars.example terraform.tfvars
 
 update it with your own prefix (and pay attention to EIP quota limit in your AWS region)
 
-## Demo runthrought
+### Demo runthrought
 
     terraform init
     terraform apply -auto-approve
@@ -37,7 +38,8 @@ Note: check existing EIP consumption [5 max]
 
     aws ec2 describe-addresses --region us-east-1 --query ‘Addresses[*].PublicIp’
 
-# [Optional] create a workspace on app.terraform.io
+## 2. Using Terraform Enterprise (aka TFE)
+### Create a workspace on app.terraform.io
 
     new workspace > skip this step > terraform-aws-hashicat
     general settings > local
