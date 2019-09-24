@@ -41,23 +41,16 @@ Note: check existing EIP consumption [5 max]
     new workspace > skip this step > terraform-aws-hashicat
     general settings > local
 
-# create a user token, if not already done
+### create a user token, if not already done
     
     https://app.terraform.io/app/settings/tokens
        XXX
     vi ~/.terraformrc
+
+### enable remote_backend
     cp remote_backend.tf.disabled remote_backend.tf
     vi remote_backend.tf
-
-check org, workspace
-
-# local exec, remote storage
-
     terraform init
-
-then make sure created workspace is set to local]
-
-    terraform apply
 
 Show current lock on workspace UI -> start to better collaborate but that’s not enough.
 
