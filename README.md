@@ -19,9 +19,9 @@ update it with your own prefix (and pay attention to EIP quota limit in your AWS
 Problems:
 - State file decentralised
 if you centralize it, it’s not easy to collaborate, who’s doing what ? 
-
+```
     cat terraform.tfstate
-    
+```    
 - Out of band changes
 
     terraform apply -var placeholder=placebear.com -var height=500 -var width=500 -auto-approve
