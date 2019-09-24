@@ -16,20 +16,14 @@ update it with your own prefix (and pay attention to EIP quota limit in your AWS
     terraform init
     terraform apply -auto-approve
 
-Establish problems
+Problems:
+- state file decentralised
+    - cat terraform.tfstate)
+    - if you centralize it, it’s not easy to collaborate, who’s doing what ?
 
-+ state file decentralised
-
-    cat terraform.tfstate
+- Secret sprawl (env | grep AWS)
     
-+ if you centralize it, it’s not easy to collaborate, who’s doing what ?
-
-+ Secret sprawl
-
-    env | grep AWS
-    clear
-    
-+ out of band changes
+- out of band changes
 
     terraform apply -var placeholder=placebear.com -var height=500 -var width=500 -auto-approve
     terraform apply -var placeholder=placebeard.it -var height=500 -var width=500 -auto-approve
