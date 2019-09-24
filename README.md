@@ -120,7 +120,7 @@ Let's upgrade our workspace to use our Github repository https://github.com/jero
 
     Settings > Version Control > Select 1st Github > jeromebaude/hashicat-aws
     
-    Connect to VCS
+    Update VCS Settings
 
     “terraform init” [optional ?]
     vi files/deploy_app.sh
