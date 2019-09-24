@@ -64,7 +64,9 @@ Sensitive information like AWS credentials is currently exposed, let switch to r
 
     terraform-aws-hashicat > Settings > General > Remote
     terraform-aws-hashicat > variables > Envt > AWS_ACCESS_KEY_ID
+    grep aws_access ~/.aws/credentials  | awk '{print $3}' | pbcopy
     terraform-aws-hashicat > variables > Envt > AWS_SECRET_ACCESS_KEY
+    grep aws_secret ~/.aws/credentials  | awk '{print $3}' | pbcopy
 
 All variables need to be stored in the app, if I execute it now it will fail, so let’s create all the required variables (API possible)
 
