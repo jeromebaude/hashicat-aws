@@ -89,7 +89,7 @@ All sensitive variables are now secured !! Environment is protected by TFE: cann
 
 Add environment variable
         
-        CONFIRM_DESTROY: 1 
+    CONFIRM_DESTROY: 1 
 
 Destroy current deployment from TFE Web UI. 
 
