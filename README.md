@@ -81,19 +81,17 @@ All variables need to be stored in the app, if I execute it now it will fail, so
 
 Show app running with Dogs now.
 
-All sensitive variable are now secured !! nobody can steal any of it.
-
-And envt protected by TFE, can’t destroy
+All sensitive variables are now secured !! Environment is protected by TFE: cannot be destroyed
 
     terraform destroy
 
-# Sentinel
+### 2.3 Sentinel
 
 Add environment variable
         
         CONFIRM_DESTROY: 1 
 
-destroy current deployment from TFE Web UI. While destroying Show Sentinel policy and explain.
+Destroy current deployment from TFE Web UI. While destroying Show Sentinel policy and explain.
 
     Settings > Policies > aws_enforce_tags
 
