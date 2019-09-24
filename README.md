@@ -103,7 +103,13 @@ Define a Policy Set applicable to `terraform-aws-hashicat`
     Settings > Policy Sets > mypolicyset
     
 Assign `aws-vpcs-must-have-tags-and-enable-dns-hostnames` to `mypolicyset`
-    
+
+Deploy the infrastructure and notice the policy check error
+```
+terraform apply -auto-approve    
+```
+
+Add `enable_dns_hostnames = true` in resource "aws_vpc" and redeploy. It should now work
 
 # VCS
 
