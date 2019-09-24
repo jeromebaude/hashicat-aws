@@ -94,12 +94,13 @@ Add environment variable
 Destroy current deployment from TFE Web UI. 
 
 Sentinel will intercept bad configurations before they go to production, not after.
+Create a policy saying vpcs must have tags and enable dns hostnames
 
-    Settings > Policies > aws_enforce_tags
+    Settings > Policies > aws-vpcs-must-have-tags-and-enable-dns-hostnames
 
 Assign `terraform-aws-hashicat` workspace to Policy Set
 
-    Settings > Policy Sets > aws
+    Settings > Policy Sets > aws-vpcs-must-have-tags-and-enable-dns-hostnames
 
 # VCS
 
