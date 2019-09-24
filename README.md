@@ -18,15 +18,15 @@ update it with your own prefix (and pay attention to EIP quota limit in your AWS
 
 Problems:
 - state file decentralised
-    - cat terraform.tfstate)
+    - cat terraform.tfstate
     - if you centralize it, it’s not easy to collaborate, who’s doing what ?
 
-- Secret sprawl (env | grep AWS)
+- Secret sprawl
+    - env | grep AWS
     
 - out of band changes
-
-    terraform apply -var placeholder=placebear.com -var height=500 -var width=500 -auto-approve
-    terraform apply -var placeholder=placebeard.it -var height=500 -var width=500 -auto-approve
+    - terraform apply -var placeholder=placebear.com -var height=500 -var width=500 -auto-approve
+    - terraform apply -var placeholder=placebeard.it -var height=500 -var width=500 -auto-approve
 
 Note: check existing EIP consumption [5 max]
 
