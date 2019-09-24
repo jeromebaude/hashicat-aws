@@ -91,7 +91,9 @@ Add environment variable
         
         CONFIRM_DESTROY: 1 
 
-Destroy current deployment from TFE Web UI. While destroying Show Sentinel policy and explain.
+Destroy current deployment from TFE Web UI. 
+
+Sentinel will intercept bad configurations before they go to production, not after.
 
     Settings > Policies > aws_enforce_tags
 
