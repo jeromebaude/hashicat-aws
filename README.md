@@ -114,7 +114,11 @@ Add `enable_dns_hostnames = true` in resource "aws_vpc" and redeploy. It should 
 
 # VCS
 
-    Settings > Version Control > Select 1st Github > planetrobbie/hashicat-aws
+Version control systems allow users to store, track, test, and collaborate on changes to their infrastructure and applications.
+
+Let's upgrade our workspace to use our Github repository https://github.com/jeromebaude/hashicat-aws.git
+
+    Settings > Version Control > Select 1st Github > jeromebaude/hashicat-aws
     
     Connect to VCS
 
