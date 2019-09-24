@@ -98,9 +98,12 @@ Create a policy saying vpcs must have tags and enable dns hostnames
 
     Settings > Policies > aws-vpcs-must-have-tags-and-enable-dns-hostnames
 
-Assign `terraform-aws-hashicat` workspace to Policy Set
+Define a Policy Set applicable to `terraform-aws-hashicat`
 
-    Settings > Policy Sets > aws-vpcs-must-have-tags-and-enable-dns-hostnames
+    Settings > Policy Sets > mypolicyset
+    
+Assign `aws-vpcs-must-have-tags-and-enable-dns-hostnames` to `mypolicyset`
+    
 
 # VCS
 
