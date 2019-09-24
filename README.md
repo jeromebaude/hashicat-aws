@@ -47,7 +47,7 @@ Note: check existing EIP consumption [5 max]
        XXX
     vi ~/.terraformrc
 
-### Enable remote_backend
+### 2.1 Enable remote_backend
     cp remote_backend.tf.disabled remote_backend.tf
     vi remote_backend.tf
     terraform init
@@ -58,12 +58,9 @@ if all good
 
     rm terraform.tfstate*
 
-# remote exec to protect sensitive variables
+### 2.2 remote exec to protect sensitive variables
 
-Problem is sensitive information like AWS credentials is currently exposed, let switch to remote exec to protect all of them,
-
-    echo “AWS_ACCESS_KEY_ID” $AWS_ACCESS_KEY_ID
-    echo “AWS_SECRET_ACCESS_KEY” $AWS_SECRET_ACCESS_KEY
+Sensitive information like AWS credentials is currently exposed, let switch to remote exec to protect all of them,
 
     terraform-aws-hashicat > Settings > General > Remote
     terraform-aws-hashicat > variables > Envt > AWS_ACCESS_KEY_ID
@@ -71,9 +68,7 @@ Problem is sensitive information like AWS credentials is currently exposed, let 
 
 All variables need to be stored in the app, if I execute it now it will fail, so let’s create all the required variables (API possible)
 
-    terraform-aws-hashicat > variables > Vars > prefix [sebastien]
-    terraform-aws-hashicat > variables > Vars > region [eu-west-3]
-
+    terraform-aws-hashicat > variables > Vars > prefix [jerome]
     terraform apply -auto-approve
 
     terraform-aws-hashicat > variables > Vars > height [600]
