@@ -4,7 +4,7 @@ Terraform Apps for TFE workshops
 Includes "Meow World" website and Dockerfiles for building containerized apps.
 
 ## 1. Using Terraform OSS
-### clone / initialise / provisiom
+### Clone / Initialise / Provision
 
     git clone https://github.com/jeromebaude/hashicat-aws.git terraform-aws-hashicat
     mv terraform.tfvars.example terraform.tfvars
