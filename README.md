@@ -163,7 +163,9 @@ Try to run plan
 Enable  `support` team read rights on `terraform-aws-hashicat` workspace
 Try again to run plan
 
-### 2.8 PMR
+### 2.8 Private Module Registry
+
+Terraform modules are reusable packages of Terraform code that you can use to build your infrastructure. Terraform Enterprise includes a Private Module Registry where you can store, version, and distribute modules to your organizations and teams.
 
     queue plan `terraform-aws-arcade`
 
