@@ -48,7 +48,7 @@ Note: check existing EIP consumption [5 max]
     vi ~/.terraformrc
 
 ### 2.1 Enable remote_backend
-    cp remote_backend.tf.disabled remote_backend.tf
+    cp ./ORG/remote_backend.tf.ORG remote_backend.tf
     vi remote_backend.tf
     terraform init
 
@@ -177,8 +177,9 @@ Terraform modules are reusable packages of Terraform code that you can use to bu
 
 #### cleanup 
     
-- mv remote_backend.tf remote_backend.tf.disabled
-- uncomment output.tf
+- rm remote_backend.tf
+- cp ./ORG/deploy_app.sh.ORG ./files/deploy_app.sh
+- cp ./ORG/outputs.tf ./output.tf
 - delete terraform-aws-hashicat` workspace
 - deactivate cost estimation on all workspaces.
 - remove support team workspace visibility
