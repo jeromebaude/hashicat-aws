@@ -112,7 +112,7 @@ terraform apply -auto-approve
 
 Add `enable_dns_hostnames = true` in resource "aws_vpc" and redeploy. It should now work
 
-# GitOps thru VCS integration
+### 2.4 GitOps thru VCS integration
 
 Version control systems allow users to store, track, test, and collaborate on changes to their infrastructure and applications.
 
@@ -122,23 +122,17 @@ Let's upgrade our workspace to use our Github repository https://github.com/jero
     
 Update VCS Settings
 
-    “terraform init” [optional ?]
     vi files/deploy_app.sh
     git add files/deploy_app.sh
     git commit -m “updated text”
     git push origin master
 
+Create a DevTestBranch and change Terraform VCS settings to connect to this branch
+
 Explain same workflow using pull requests [collaboration]
 
-# Collab
 
-    https://github.com/planetrobbie/hashicat-aws/blob/master/files/deploy_app.sh
-    
-use the pencil, edit and create a pull request.
-explain checks
-merge, show plan.
-
-# Cost Estimation
+### 2.5 Cost Estimation
 
     check instance_type: t2.micro
     queue plan `terraform-aws-ec2`
@@ -147,7 +141,7 @@ merge, show plan.
     discard run
     queue destroy
 
-# RBAC
+### 2.6 RBAC
 
 explain roles org,workspace level
 
@@ -160,7 +154,7 @@ enable `terraform-aws-ec2` workspace `support` team read visibility
 remove team to 
 enable `terraform-aws-ec2` workspace `support` team plan visibility
 
-# PMR
+### 2.8 PMR
 
     queue plan `terraform-aws-arcade`
 
