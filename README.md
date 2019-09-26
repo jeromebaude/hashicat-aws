@@ -137,12 +137,9 @@ Merge the change into the main branch
 
 ### 2.5 Cost Estimation
 
-    check instance_type: t2.micro
-    queue plan `terraform-aws-ec2`
-    update instance_type: m5.large
-    queue plan again
-    discard run
-    queue destroy
+Terraform Cloud provides cost estimates for many resources found in your Terraform configuration. For each resource an hourly and monthly cost is shown, along with the monthly delta. The total cost and delta of all estimable resources is also shown.
+
+To enable Cost Estimation for your organization, check the box in your organization's settings.
 
 ### 2.6 RBAC
 
