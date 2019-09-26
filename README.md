@@ -128,17 +128,10 @@ Update VCS Settings
     git commit -m “updated text”
     git push origin master
 
-Explain same workflow using pull requests [collaboration]
+Create a DevTestBranch and  Explain same workflow using pull requests [collaboration]
 
-### 2.5 Collab
 
-    https://github.com/planetrobbie/hashicat-aws/blob/master/files/deploy_app.sh
-    
-use the pencil, edit and create a pull request.
-explain checks
-merge, show plan.
-
-### 2.6 Cost Estimation
+### 2.5 Cost Estimation
 
     check instance_type: t2.micro
     queue plan `terraform-aws-ec2`
@@ -147,7 +140,7 @@ merge, show plan.
     discard run
     queue destroy
 
-### 2.7 RBAC
+### 2.6 RBAC
 
 explain roles org,workspace level
 
