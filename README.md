@@ -58,7 +58,7 @@ if all good
 
     rm terraform.tfstate*
 
-### 2.2 remote exec to protect sensitive variables
+### 2.2 Remote exec to protect sensitive variables
 
 Sensitive information like AWS credentials is currently exposed, let switch to remote exec to protect all of them,
 
@@ -112,7 +112,7 @@ terraform apply -auto-approve
 
 Add `enable_dns_hostnames = true` in resource "aws_vpc" and redeploy. It should now work
 
-# VCS
+### 2.4 GitOps thru VCS integration
 
 Version control systems allow users to store, track, test, and collaborate on changes to their infrastructure and applications.
 
@@ -122,45 +122,50 @@ Let's upgrade our workspace to use our Github repository https://github.com/jero
     
 Update VCS Settings
 
-    “terraform init” [optional ?]
     vi files/deploy_app.sh
     git add files/deploy_app.sh
     git commit -m “updated text”
     git push origin master
 
-Explain same workflow using pull requests [collaboration]
+Create a DevTestBranch and change Terraform VCS settings to connect to this branch
 
-# Collab
+Edit deploy_app.sh and commit thru the GitHub web UI. This will trigger a new Terraform Run (Plan+Apply)
 
-    https://github.com/planetrobbie/hashicat-aws/blob/master/files/deploy_app.sh
-    
-use the pencil, edit and create a pull request.
-explain checks
-merge, show plan.
+Open a Pull Request and see that All checks passed (click on details to see that Terraform run was successfull)
 
-# Cost Estimation
+Merge the change into the main branch
 
-    check instance_type: t2.micro
-    queue plan `terraform-aws-ec2`
-    update instance_type: m5.large
-    queue plan again
-    discard run
-    queue destroy
+### 2.5 Cost Estimation
 
-# RBAC
+Terraform Cloud provides cost estimates for many resources found in your Terraform configuration. For each resource an hourly and monthly cost is shown, along with the monthly delta. The total cost and delta of all estimable resources is also shown.
 
-explain roles org,workspace level
+To enable Cost Estimation for your organization, check the box in your organization's settings.
+
+Disable `auto-apply` and add a new variable
+```
+instance_type: m5.large
+```
+Disable Cost Estimation
+
+### 2.6 RBAC
+
+Terraform Cloud's organizational and access control model is based on three units: users, teams, and organizations.
+https://www.terraform.io/docs/cloud/users-teams-organizations/index.html
 
 chrome incognito window to https://app.terraform.io
 
     login: xxx
     password: XXX
     
-enable `terraform-aws-ec2` workspace `support` team read visibility
-remove team to 
-enable `terraform-aws-ec2` workspace `support` team plan visibility
+Enable `support` team read rights on `terraform-aws-hashicat` workspace
+Try to run plan
 
-# PMR
+Enable  `support` team read rights on `terraform-aws-hashicat` workspace
+Try again to run plan
+
+### 2.8 Private Module Registry
+
+Terraform modules are reusable packages of Terraform code that you can use to build your infrastructure. Terraform Enterprise includes a Private Module Registry where you can store, version, and distribute modules to your organizations and teams.
 
     queue plan `terraform-aws-arcade`
 
