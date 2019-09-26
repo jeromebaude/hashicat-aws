@@ -173,6 +173,8 @@ Terraform modules are reusable packages of Terraform code that you can use to bu
 - Back in your TFE organization, navigate to the modules section and add the Azure Compute module to your private registry.
 
 
+
+
 #### cleanup 
     
 - mv remote_backend.tf remote_backend.tf.disabled
