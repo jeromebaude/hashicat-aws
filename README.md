@@ -149,6 +149,7 @@ instance_type: m5.large
 ### 2.6 RBAC
 
 Terraform Cloud's organizational and access control model is based on three units: users, teams, and organizations.
+https://www.terraform.io/docs/cloud/users-teams-organizations/index.html
 
 chrome incognito window to https://app.terraform.io
 
