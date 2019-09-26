@@ -44,7 +44,7 @@ Note: check existing EIP consumption [5 max]
 (Create a user token, if not already done: https://app.terraform.io/app/settings/tokens vi ~/.terraformrc)
 
 ### 2.1 Enable remote_backend
-    cp ./ORG/remote_backend.tf.ORG remote_backend.tf
+    cp ./ORG/remote_backend.tf remote_backend.tf
     vi remote_backend.tf
     terraform init
 
