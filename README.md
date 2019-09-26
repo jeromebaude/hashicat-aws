@@ -175,9 +175,9 @@ Terraform modules are reusable packages of Terraform code that you can use to bu
 
 # cleanup 
     
-    mv remote_backend.tf remote_backend.tf.disabled
-    uncomment output.tf
-    delete terraform-aws-hashicat` workspace
-    deactivate cost estimation on all workspaces.
-    remove support team workspace visibility
+- mv remote_backend.tf remote_backend.tf.disabled
+- uncomment output.tf
+- delete terraform-aws-hashicat` workspace
+- deactivate cost estimation on all workspaces.
+- remove support team workspace visibility
 
