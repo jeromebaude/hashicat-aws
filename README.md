@@ -41,7 +41,7 @@ Note: check existing EIP consumption [5 max]
     new workspace > skip this step > terraform-aws-hashicat
     general settings > local
 
-#### Create a user token, if not already done (https://app.terraform.io/app/settings/tokens vi ~/.terraformrc)
+(Create a user token, if not already done: https://app.terraform.io/app/settings/tokens vi ~/.terraformrc)
 
 ### 2.1 Enable remote_backend
     cp ./ORG/remote_backend.tf.ORG remote_backend.tf
