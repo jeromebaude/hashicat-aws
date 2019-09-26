@@ -157,9 +157,11 @@ chrome incognito window to https://app.terraform.io
     login: xxx
     password: XXX
     
-enable `terraform-aws-ec2` workspace `support` team read visibility
-remove team to 
-enable `terraform-aws-ec2` workspace `support` team plan visibility
+Enable `support` team read rights on `terraform-aws-hashicat` workspace
+Try to run plan
+
+Enable  `support` team read rights on `terraform-aws-hashicat` workspace
+Try again to run plan
 
 ### 2.8 PMR
 
