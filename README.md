@@ -129,8 +129,11 @@ Update VCS Settings
 
 Create a DevTestBranch and change Terraform VCS settings to connect to this branch
 
-Explain same workflow using pull requests [collaboration]
+Edit deploy_app.sh and commit thru the GitHub web UI. This will trigger a new Terraform Run (Plan+Apply)
 
+Open a Pull Request and see that All checks passed (click on details to see that Terraform run was successfull)
+
+Merge the change into the main branch
 
 ### 2.5 Cost Estimation
 
