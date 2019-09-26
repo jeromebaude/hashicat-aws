@@ -122,13 +122,14 @@ Let's upgrade our workspace to use our Github repository https://github.com/jero
     
 Update VCS Settings
 
-    “terraform init” [optional ?]
     vi files/deploy_app.sh
     git add files/deploy_app.sh
     git commit -m “updated text”
     git push origin master
 
-Create a DevTestBranch and  Explain same workflow using pull requests [collaboration]
+Create a DevTestBranch and change Terraform VCS settings to connect to this branch
+
+Explain same workflow using pull requests [collaboration]
 
 
 ### 2.5 Cost Estimation
