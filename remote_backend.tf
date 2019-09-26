@@ -3,7 +3,7 @@ terraform {
     hostname = "app.terraform.io"
     organization = "jerome-playground-2019"
     workspaces {
-      name = "hashicat-aws-vcs"
+      name = "terraform-aws-hashicat"
     }
   }
 }
