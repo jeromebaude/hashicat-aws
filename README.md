@@ -58,7 +58,7 @@ if all good
 
     rm terraform.tfstate*
 
-### 2.2 remote exec to protect sensitive variables
+### 2.2 Remote exec to protect sensitive variables
 
 Sensitive information like AWS credentials is currently exposed, let switch to remote exec to protect all of them,
 
@@ -112,7 +112,7 @@ terraform apply -auto-approve
 
 Add `enable_dns_hostnames = true` in resource "aws_vpc" and redeploy. It should now work
 
-# VCS
+# GitOps thru VCS integration
 
 Version control systems allow users to store, track, test, and collaborate on changes to their infrastructure and applications.
 
