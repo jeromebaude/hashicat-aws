@@ -145,6 +145,7 @@ Disable `auto-apply` and add a new variable
 ```
 instance_type: m5.large
 ```
+Disable Cost Estimation
 
 ### 2.6 RBAC
 
