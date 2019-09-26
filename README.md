@@ -167,21 +167,17 @@ Try again to run plan
 
 Terraform modules are reusable packages of Terraform code that you can use to build your infrastructure. Terraform Enterprise includes a Private Module Registry where you can store, version, and distribute modules to your organizations and teams.
 
-    queue plan `terraform-aws-arcade`
+- Visit the Terraform public module registry and navigate to the AWS ECS Fargate Module (https://registry.terraform.io/modules/jnonino/ecs-fargate/aws/2.0.4)
+- Find the GitHub source code link on the page and click on it.
+- Fork the module repo into your own GitHub account
+- Back in your TFE organization, navigate to the modules section and add the Azure Compute module to your private registry.
+
 
 # cleanup 
     
-    rm remote_backend.tf
-    terraform init
-    remove workspace `terraform-aws-hashicat` from policy set `aws`
+    mv remote_backend.tf remote_backend.tf.disabled
+    uncomment output.tf
     delete terraform-aws-hashicat` workspace
-    queue destroy `terraform-aws-ec2`
     deactivate cost estimation on all workspaces.
     remove support team workspace visibility
 
-# requirement on labtop / or use windows desktop
-
-- Terraform
-- Vault
-- aws cli
-- AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY
