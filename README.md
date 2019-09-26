@@ -141,7 +141,7 @@ Terraform Cloud provides cost estimates for many resources found in your Terrafo
 
 To enable Cost Estimation for your organization, check the box in your organization's settings.
 
-Add a new variable
+Disable `auto-apply` and add a new variable
 ```
 instance_type: m5.large
 ```
