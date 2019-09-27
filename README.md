@@ -166,8 +166,7 @@ Terraform modules are reusable packages of Terraform code that you can use to bu
 - Visit the Terraform public module registry and navigate to the AWS ECS Fargate Module (https://registry.terraform.io/modules/jnonino/ecs-fargate/aws/2.0.4)
 - Find the GitHub source code link on the page and click on it.
 - Fork the module repo into your own GitHub account
-- Back in your TFE organization, navigate to the modules section and add the Azure Compute module to your private registry.
-
+- Back in your TFE organization, navigate to the modules section and add the AWS ECS Fargate Module to your private registry.
 
 
 
@@ -177,6 +176,7 @@ Terraform modules are reusable packages of Terraform code that you can use to bu
 - cp ./ORG/deploy_app.sh.ORG ./files/deploy_app.sh
 - cp ./ORG/outputs.tf ./output.tf
 - delete terraform-aws-hashicat` workspace
-- deactivate cost estimation on all workspaces.
+- deactivate cost estimation on all workspaces
 - remove support team workspace visibility
+- remove AWS ECS Fargate Module from the private registry
 
