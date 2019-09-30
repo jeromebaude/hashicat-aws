@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git checkout master
 rm -f remote_backend.tf
 cp ./ORG/deploy_app.sh ./files/deploy_app.sh
 cp ./ORG/main.tf ./
