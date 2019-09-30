@@ -193,12 +193,9 @@ git push origin DevTestBranch
 #### cleanup 
 
 ```
-rm remote_backend.tf
-cp ./ORG/deploy_app.sh.ORG ./files/deploy_app.sh
-cp ./ORG/outputs.tf ./output.tf
-cp ./ORG/main.tf ./
-git add *
-git push origin master
+./clean.sh
+cd ..
+rm -rf terraform-aws-hashicat
 ```
 
 - delete terraform-aws-hashicat workspace
