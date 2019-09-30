@@ -123,6 +123,7 @@ Update VCS Settings
 
     vi files/deploy_app.sh
     git add files/deploy_app.sh
+    git add main.tf
     git commit -m “updated text”
     git push origin master
 
@@ -134,35 +135,42 @@ Open a Pull Request and see that All checks passed (click on details to see that
 
 Merge the change into the main branch
 
-### 2.5 Cost Estimation
+### 2.5 RBAC
+
+Terraform Cloud's organizational and access control model is based on three units: users, teams, and organizations.
+https://www.terraform.io/docs/cloud/users-teams-organizations/index.html
+
+Go to Settings > Teams > TeamSupport and check that `jeromebaude2` belongs to the `TeamSupport` team
+
+Login to chrome incognito window to https://app.terraform.io
+
+    login: jeromebaude2
+    password: XXX
+
+Check that no workspace is visible
+
+Back to main browser (login as jeromebaude):
+Go to workspace `terraform-aws-hashicat` Settings > Team Access > Add a Team and give `read permissions` to `TeamSupport`
+
+Back to chrome incognito (login as jeromebaude2) and check that we can now see workspace `terraform-aws-hashicat`
+But we cannot `Queue Plan`
+
+### 2.6 Cost Estimation
 
 Terraform Cloud provides cost estimates for many resources found in your Terraform configuration. For each resource an hourly and monthly cost is shown, along with the monthly delta. The total cost and delta of all estimable resources is also shown.
 
 To enable Cost Estimation for your organization, check the box in your organization's settings.
 
 Disable `auto-apply` and add a new variable
+
+Add the following variable
 ```
 instance_type: m5.large
 ```
-Disable Cost Estimation
+Discard Run "too expensive"
 
-### 2.6 RBAC
 
-Terraform Cloud's organizational and access control model is based on three units: users, teams, and organizations.
-https://www.terraform.io/docs/cloud/users-teams-organizations/index.html
-
-chrome incognito window to https://app.terraform.io
-
-    login: xxx
-    password: XXX
-    
-Enable `support` team read rights on `terraform-aws-hashicat` workspace
-Try to run plan
-
-Enable  `support` team read rights on `terraform-aws-hashicat` workspace
-Try again to run plan
-
-### 2.8 Private Module Registry
+### 2.7 Private Module Registry
 
 Terraform modules are reusable packages of Terraform code that you can use to build your infrastructure. Terraform Enterprise includes a Private Module Registry where you can store, version, and distribute modules to your organizations and teams.
 
@@ -170,16 +178,30 @@ Terraform modules are reusable packages of Terraform code that you can use to bu
 - Find the GitHub source code link on the page and click on it.
 - Fork the module repo into your own GitHub account
 - Back in your TFE organization, navigate to the modules section and add the AWS ECS Fargate Module to your private registry.
-
+```
+git pull origin DevTestBranch
+git checkout DevTestBranch
+cp ./ORG/main.module.tf main.tf
+vi main.tf
+vi outputs.tf
+git add main.tf outputs.tf
+git commit -m "demo using modules"
+git push origin DevTestBranch
+```
 
 
 #### cleanup 
-    
-- rm remote_backend.tf
-- cp ./ORG/deploy_app.sh.ORG ./files/deploy_app.sh
-- cp ./ORG/outputs.tf ./output.tf
-- delete terraform-aws-hashicat` workspace
+
+```
+rm remote_backend.tf
+cp ./ORG/deploy_app.sh.ORG ./files/deploy_app.sh
+cp ./ORG/outputs.tf ./output.tf
+cp ./ORG/main.tf ./
+git add *
+git push origin master
+```
+
+- delete terraform-aws-hashicat workspace
 - deactivate cost estimation on all workspaces
 - remove support team workspace visibility
 - remove AWS ECS Fargate Module from the private registry
-
