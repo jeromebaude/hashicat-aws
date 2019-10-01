@@ -198,6 +198,7 @@ cd ..
 rm -rf terraform-aws-hashicat
 ```
 
+- delete github branch DevTestBranch
 - delete terraform-aws-hashicat workspace
 - deactivate cost estimation on all workspaces
 - remove support team workspace visibility
