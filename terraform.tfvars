@@ -4,6 +4,6 @@
 
 prefix = "jerome"
 
-#height = "500"
-#width = "500"
-#placeholder = "placebeard.it"
+height = "500"
+width = "500"
+placeholder = "placebeard.it"
