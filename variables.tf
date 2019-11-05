@@ -16,6 +16,7 @@ variable "region" {
 
 variable "ami" {
   description = "The AMI id being used"
+  default     = "ami-0f99dca6fd2ed7c0a"
 }
 
 variable "address_space" {

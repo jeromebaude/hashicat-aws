@@ -8,7 +8,6 @@ Includes "Meow World" website and Dockerfiles for building containerized apps.
 
     git clone https://github.com/jeromebaude/hashicat-aws.git terraform-aws-hashicat
     cd terraform-aws-hashicat
-    mv terraform.tfvars.example terraform.tfvars
 
 update it with your own prefix (and pay attention to EIP quota limit in your AWS region)
 
@@ -76,7 +75,7 @@ All variables need to be stored in the app, if I execute it now it will fail, so
     terraform-aws-hashicat > variables > Vars > width [800]
     terraform-aws-hashicat > variables > Vars > placeholder [placedog.net]
 
-    terraform -auto-approve
+    terraform apply -auto-approve
 
 Show app running with Dogs now.
 

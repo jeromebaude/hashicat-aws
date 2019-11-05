@@ -23,7 +23,7 @@ resource "aws_key_pair" "hashicat" {
 
 resource "aws_vpc" "hashicat" {
   cidr_block           = "${var.address_space}"
-  enable_dns_hostnames = false
+  enable_dns_hostnames = true
 
   tags = {
     Name = "${var.prefix}-vpc"
@@ -127,7 +127,8 @@ data "aws_ami" "ubuntu" {
 }
 
 resource "aws_instance" "hashicat" {
-  ami                         = "${data.aws_ami.ubuntu.id}"
+#  ami                         = "${data.aws_ami.ubuntu.id}"
+  ami                         = "${var.ami}"
   instance_type               = "${var.instance_type}"
   key_name                    = "${aws_key_pair.hashicat.key_name}"
   associate_public_ip_address = true
@@ -178,8 +179,8 @@ resource "null_resource" "configure-cat-app" {
   }
   provisioner "remote-exec" {
     inline = [
-      "sudo apt -y install apache2",
-      "sudo systemctl start apache2",
+#      "sudo apt -y install apache2",
+#      "sudo systemctl start apache2",
       "sudo chown -R ubuntu:ubuntu /var/www/html",
       "chmod +x *.sh",
       "PLACEHOLDER=${var.placeholder} WIDTH=${var.width} HEIGHT=${var.height} PREFIX=${var.prefix} ./deploy_app.sh",
