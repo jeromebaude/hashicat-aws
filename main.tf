@@ -23,7 +23,7 @@ resource "aws_key_pair" "hashicat" {
 
 resource "aws_vpc" "hashicat" {
   cidr_block           = "${var.address_space}"
-  enable_dns_hostnames = true
+  enable_dns_hostnames = "${var.enable_dns_hostnames}"
 
   tags = {
     Name = "${var.prefix}-vpc"
