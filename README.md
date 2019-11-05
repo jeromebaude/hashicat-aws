@@ -11,6 +11,12 @@ Includes "Meow World" website and Dockerfiles for building containerized apps.
 
 update it with your own prefix (and pay attention to EIP quota limit in your AWS region)
 
+### Build our own AMI with Packer
+
+    packer validate template_packer.json
+    packer build -only=amazon-ebs template_packer.json
+    vi main.tf (comment apache install and use packer newly built AMI)
+
 ### Demo runthrought
 
     terraform init
