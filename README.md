@@ -179,7 +179,7 @@ Discard Run "too expensive"
 
 Terraform modules are reusable packages of Terraform code that you can use to build your infrastructure. Terraform Enterprise includes a Private Module Registry where you can store, version, and distribute modules to your organizations and teams.
 
-- Visit the Terraform public module registry and navigate to the AWS ECS Fargate Module (https://registry.terraform.io/modules/jnonino/ecs-fargate/aws/2.0.4)
+- Visit the Terraform public module registry and navigate to the AWS ECS Fargate Module (https://registry.terraform.io/modules/cn-terraform/ecs-fargate/aws/2.0.7)
 - Find the GitHub source code link on the page and click on it.
 - Fork the module repo into your own GitHub account
 - Back in your TFE organization, navigate to the modules section and add the AWS ECS Fargate Module to your private registry.
