@@ -4,7 +4,6 @@
 
 prefix = "jerome"
 
-height = "500"
-width = "500"
-placeholder = "placebeard.it"
-enable_dns_hostnames = "false"
+#height = "500"
+#width = "500"
+#placeholder = "placebeard.it"
