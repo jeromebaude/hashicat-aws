@@ -19,6 +19,9 @@ update it with your own prefix (and pay attention to EIP quota limit in your AWS
 
 (for vmware see https://www.packer.io/docs/builders/vmware.html)
 
+(AWS images are https://eu-north-1.console.aws.amazon.com/ec2/home?region=eu-north-1#Images:sort=name)
+
+
 ### Demo runthrought
 
     terraform init
@@ -66,6 +69,8 @@ if all good
 
 ### 2.2 Remote exec to protect sensitive variables
 
+Configure Remote exec (and auto-apply)
+
 Sensitive information like AWS credentials is currently exposed, let switch to remote exec to protect all of them,
 
     terraform-aws-hashicat > Settings > General > Remote
@@ -111,12 +116,16 @@ Define a Policy Set applicable to `terraform-aws-hashicat`
     
 Assign `aws-vpcs-must-have-tags-and-enable-dns-hostnames` to `mypolicyset`
 
+Add a variable `enable_dns_hostnames` and set it to `false`
+
 Deploy the infrastructure and notice the policy check error
 ```
 terraform apply -auto-approve    
 ```
 
-Add `enable_dns_hostnames = true` in resource "aws_vpc" and redeploy. It should now work
+Change the variable and set it to `true`. It should now work
+
+(disable the sentinel rule)
 
 ### 2.4 GitOps thru VCS integration
 
@@ -141,6 +150,8 @@ Edit deploy_app.sh and commit thru the GitHub web UI. This will trigger a new Te
 Open a Pull Request and see that All checks passed (click on details to see that Terraform run was successfull)
 
 Merge the change into the main branch
+
+(Change the VCS config to the master branch and destroy everything)
 
 ### 2.5 RBAC
 
