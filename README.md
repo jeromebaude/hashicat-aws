@@ -26,6 +26,7 @@ update it with your own prefix (and pay attention to EIP quota limit in your AWS
 
 
 Problems:
+
 :warning: State files are decentralised
 if you centralize it, it’s not easy to collaborate, who’s doing what ? 
 ```
