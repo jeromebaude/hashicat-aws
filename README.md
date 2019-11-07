@@ -24,26 +24,23 @@ update it with your own prefix (and pay attention to EIP quota limit in your AWS
     terraform init
     terraform apply -auto-approve
 
-:warning:
 
 Problems:
-- State file decentralised
+:warning: State files are decentralised
 if you centralize it, it’s not easy to collaborate, who’s doing what ? 
 ```
 cat terraform.tfstate
 ```    
-- Secret sprawl
+:warning: Secrets are not securely stored
 ```
 ls ~/.aws/credentials
 ```
-- Out of band changes
+:warning: Out of band changes are possible without tracing
 ```
 terraform apply -var placeholder=placebear.com -var height=500 -var width=500 -auto-approve
 terraform apply -var placeholder=placebeard.it -var height=500 -var width=500 -auto-approve
 ```
-Note: check existing EIP consumption [5 max]
 
-    aws ec2 describe-addresses --region us-east-1 --query ‘Addresses[*].PublicIp’
 
 ## 2. Using Terraform Enterprise (aka TFE)
 ### Create a workspace on app.terraform.io
