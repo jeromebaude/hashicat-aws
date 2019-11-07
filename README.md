@@ -17,10 +17,14 @@ update it with your own prefix (and pay attention to EIP quota limit in your AWS
     packer build -only=amazon-ebs template_packer.json
     vi main.tf (comment apache install and use packer newly built AMI)
 
+(for vmware see https://www.packer.io/docs/builders/vmware.html)
+
 ### Demo runthrought
 
     terraform init
     terraform apply -auto-approve
+
+:warning:
 
 Problems:
 - State file decentralised
