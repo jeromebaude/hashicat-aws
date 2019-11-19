@@ -87,6 +87,9 @@ All variables need to be stored in the app, if I execute it now it will fail, so
     terraform-aws-hashicat > variables > Vars > height [600]
     terraform-aws-hashicat > variables > Vars > width [800]
     terraform-aws-hashicat > variables > Vars > placeholder [placedog.net]
+    
+    (another option is to use The Terraform Helper: https://github.com/hashicorp-community/tf-helper)
+    tfh pushvars -overwrite-all -dry-run false   -env-var "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"   -senv-var "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"   -var "prefix=jerome"
 
     terraform apply -auto-approve
 
