@@ -4,15 +4,14 @@ terraform {
 
 provider "aws" {
   version = "~> 2.0"
-  region  = "${var.region}"
+  region  = var.region
 }
 
 module "hashicat-module" {
   source      = "app.terraform.io/jerome-playground/hashicat-module/aws"
-  version     = "1.1.3"
-  prefix      = "${var.prefix}"
-  ami         = "${var.ami}"
-  height      = "${var.height}"
-  width       = "${var.width}"
-  placeholder = "${var.placeholder}"
+  version     = "1.1.5"
+  prefix      = var.prefix
+  height      = var.height
+  width       = var.width
+  placeholder = var.placeholder
 }
