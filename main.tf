@@ -7,6 +7,7 @@ provider "aws" {
   region  = "${var.region}"
 }
 
+#module desc
 module "hashicat-module" {
   source      = "app.terraform.io/jerome-playground/hashicat-module/aws"
   version     = "1.1.3"
