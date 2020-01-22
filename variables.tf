@@ -21,7 +21,7 @@ variable "ami" {
 
 variable "enable_dns_hostnames" {
   description = "enable dns hostnames"
-  default     = "true"
+  default     = "false"
 }
 
 variable "address_space" {
