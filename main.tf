@@ -10,8 +10,8 @@ provider "aws" {
 module "hashicat-module" {
   source      = "app.terraform.io/jerome-playground/hashicat-module/aws"
   version     = "1.1.4"
-  prefix      = "${var.prefix}"
-  height      = "${var.height}"
-  width       = "${var.width}"
-  placeholder = "${var.placeholder}"
+  prefix      = var.prefix
+  height      = var.height
+  width       = var.width
+  placeholder = var.placeholder
 }
