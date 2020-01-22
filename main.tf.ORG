@@ -4,7 +4,7 @@ terraform {
 
 provider "aws" {
   version = "~> 2.0"
-  region  = "${var.region}"
+  region  = var.region
 }
 
 
@@ -17,13 +17,13 @@ locals {
 }
 
 resource "aws_key_pair" "hashicat" {
-  key_name   = "${local.private_key_filename}"
-  public_key = "${tls_private_key.hashicat.public_key_openssh}"
+  key_name   = local.private_key_filename
+  public_key = tls_private_key.hashicat.public_key_openssh
 }
 
 resource "aws_vpc" "hashicat" {
-  cidr_block           = "${var.address_space}"
-  enable_dns_hostnames = "${var.enable_dns_hostnames}"
+  cidr_block           = var.address_space
+  enable_dns_hostnames = var.enable_dns_hostnames
 
   tags = {
     Name = "${var.prefix}-vpc"
@@ -153,7 +153,7 @@ resource "aws_instance" "hashicat" {
 # Run the deploy_app.sh script.
 resource "null_resource" "configure-cat-app" {
   depends_on = [
-    "aws_instance.hashicat",
+    aws_instance.hashicat,
   ]
 
   # Terraform 0.11

@@ -8,7 +8,7 @@ provider "aws" {
 }
 
 module "hashicat-module" {
-  source      = "app.terraform.io/jerome-playground-2019/hashicat-module/aws"
+  source      = "app.terraform.io/jerome-playground/hashicat-module/aws"
   version     = "1.1.3"
   prefix      = "${var.prefix}"
   ami         = "${var.ami}"
