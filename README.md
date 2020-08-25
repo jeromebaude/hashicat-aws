@@ -89,7 +89,7 @@ All variables need to be stored in the app, if I execute it now it will fail, so
     terraform-aws-hashicat > variables > Vars > placeholder [placedog.net]
     
     (another option is to use The Terraform Helper: https://github.com/hashicorp-community/tf-helper)
-    tfh pushvars -overwrite-all -dry-run false  -org jerome-playground -name terraform-aws-hashicat -env-var "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" -env-var "AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN"  -senv-var "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"   -var "prefix=jerome" -var "placehodler=placedog.net"
+    tfh pushvars -overwrite-all -dry-run false  -org jerome-playground -name terraform-aws-hashicat -env-var "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID" -env-var "AWS_SESSION_TOKEN=$AWS_SESSION_TOKEN"  -senv-var "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"   -var "prefix=jerome" -var "placeholder=placedog.net"
 
     terraform apply -auto-approve
 
