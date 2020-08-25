@@ -59,3 +59,13 @@ variable "placeholder" {
   default     = "placekitten.com"
   description = "Image-as-a-service URL. Some other fun ones to try are fillmurray.com, placecage.com, placebeard.it, loremflickr.com, baconmockup.com, placeimg.com, placebear.com, placeskull.com, stevensegallery.com, placedog.net"
 }
+
+variable "create" {
+  description = "Create Module, defaults to true."
+  default     = true
+}
+
+variable "permissions" {
+  description = "The Unix file permission to assign to the cert files (e.g. 0600). Defaults to \"0600\"."
+  default     = "0600"
+}
